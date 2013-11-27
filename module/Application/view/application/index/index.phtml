@@ -1,0 +1,89 @@
+
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('Welcome to EVSpons')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/evspons-icon.ico'))
+                        ->prependStylesheet($this->basePath() . '/css/style.css')
+                        ->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
+                        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+        				->prependStylesheet($this->basePath() . '/css/logged_out_dashboard.css') ?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+        	->prependFile($this->basePath() . '/js/main.js')
+            ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+            ->prependFile($this->basePath() . '/js/jquery.min.js')
+            ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
+        ; ?>
+
+    </head>
+    <body class="home-body">
+        <div class="container">
+            <?php echo $this->content; ?>
+            
+            <div class="jumbotron_">
+			    <h1><?php echo sprintf($this->translate('Welcome to %sEVSpons%s'), '<span class="evs-blue">', '</span>') ?></h1>
+			    <p><?php echo sprintf($this->translate(' Sign up now and get your event planned and sponsored for FREE in just 4 easy steps
+1- Create your community
+2- Add new event
+2- Invite community members to participate
+3- Get a professional sponsored event')) ?></p>
+			    <div class="form-container">
+					<div class="card">
+						<div class="face front">
+							<?php echo $this->partial('layout/signup', array());?>
+							<a class="signin-link">Already registerd?</a>
+						</div>
+						<div class="face back">
+							<?php echo $this->partial('layout/signin', array());?>
+							<a class="signup-link">Create an account</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="fullscreen_post_footer">
+        		<div class="fullscreen_post_footer_inner">
+        			<!-- <div class="footer_legal_links">
+                    	<a href="https://www.tumblr.com/policy" target="_blank" class="login_link policy_link terms">Terms</a>
+            			<a href="https://www.tumblr.com/privacy_policy" target="_blank" class="login_link policy_link privacy">Privacy</a>
+            		</div> -->
+    				<div class="dash_b_footer_stats">
+        				<div class="stat stats_blogs">
+                        	<div class="number">45</div>
+            				<div class="description">thousand communities</div>
+        				</div>
+        				<div class="stat stats_posts">
+                        	<div class="number">123</div>
+            				<div class="description">thousand events</div>
+        				</div>
+        				<div class="stat stats_signup">
+            				<div class="number">30&nbsp;</div>
+            				<div class="description">seconds to join</div>
+        				</div>
+    				</div>
+		            <!-- <div class="fullscreen_post_posted_by show">
+						<div class="post_info just_tumblelog" data-tumblelog="laboratoryequipment" data-id="66676981692" style="cursor: pointer;">
+                    		<a href="http://laboratoryequipment.tumblr.com/" target="_blank" rel="nofollow" title="Posted by laboratoryequipment">Posted by <strong>laboratoryequipment</strong></a>        <a href="http://laboratoryequipment.tumblr.com/" target="_blank" rel="nofollow" title="laboratoryequipment" class="post_avatar root_tumblelog" id="post_avatar_66676981692" style="background-image:url('https://31.media.tumblr.com/avatar_50a366c35f36_30.png')">
+            					<img src="https://31.media.tumblr.com/avatar_50a366c35f36_30.png" alt="laboratoryequipment">
+            				</a>
+						</div>
+            		</div> -->
+				</div>
+    		</div>			            
+            
+        </div> <!-- /container -->
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>
